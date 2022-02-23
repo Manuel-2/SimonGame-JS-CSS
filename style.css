@@ -6,34 +6,44 @@
 
 html {
     font-size: 62.5%;
+    font-family: 'Oswald', sans-serif;
 }
 
 :root {
     /*Colors*/
-    --e_button:#792121;
-    --e_button__active:#d63737;
+    --e_button: #754743;
+    --e_button__active: #EC8A83;
 
-    --i_button:#1a421a;
-    --i_button__active:#58df58;
+    --i_button: #325238;
+    --i_button__active: #8BE59D;
 
-    --f_button:#0b2849;
-    --f_button__active:#2580e9;
+    --f_button: #203647;
+    --f_button__active: #6AB4F1;
 
-    --j_button:#3a3909;
-    --j_button__active:#dfdc29;
+    --j_button: #57542a;
+    --j_button__active: #F9F176;
 
-    --console:#f0f0f0;
+    --console: #f0f0f0;
 
-    --game_button_border_color:#505050;
+    --game_button_border_color: #505050;
     /*Font size*/
+    --title_font_size: 5.5rem;
 
     /*Extras*/
-    --button_size:125px;
+    --button_size: 125px;
+    --buton_active_scale: 0.88;
 }
 
 body {
     width: 100vw;
     height: 100vh;
+    background-color: #ffffff;
+    background-image: linear-gradient(160deg, #ffffff 0%, #eaeaea 100%);
+
+
+    /*
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+    */
 }
 
 main {
@@ -45,11 +55,30 @@ main {
     flex-direction: column;
 }
 
+.title {
+    margin-bottom: 50px;
+    font-size: var(--title_font_size);
+    background-color: #ec8a83;
+    background-image: linear-gradient(90deg, #ec8a83 0%, #8be59d 33%, #6ab4f1 66%, #f9f176 100%);
+    color: white;
+    padding: 5px 45px;
+    border-radius: 15px;
+}
+
+
 footer {
     width: 100%;
     height: 50px;
+    background-color: rgb(68, 68, 68);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+}
 
-    background-color: black;
+footer a {
+    color: #6AB4F1;
 }
 
 .console {
@@ -61,67 +90,90 @@ footer {
     place-items: center;
     grid-template-columns: 2fr 3fr 3fr 2fr;
     grid-template-rows: 150px 150px;
-    grid-template-areas: 
-    "e1 mm mm i1"
-    "v1 f1 j1 v2";
-    border-radius: 40px;
-    border: solid 3px #a1a1a1;
+    grid-template-areas:
+        "e1 mm mm i1"
+        "v1 f1 j1 v2";
 
-    background-color: var(--console);
+    /*
+    border-radius: 40px;
+    */
 }
 
-.start_input{
+.start_input {
     grid-area: mm;
     width: 100px;
     height: 45px;
     border-radius: 15px;
-    border: solid 3px #747474;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    background-color: #fbfbfb;
+    transition: transform 0.1s;
+}
+
+.start_input:active {
+    transform: scale(0.90);
+    background-color: #c3c3c3;
+}
+
+.start_input:focus {
+    outline: none;
 }
 
 .game_input {
     width: var(--button_size);
     height: var(--button_size);
     border-radius: 50%;
-    border: solid 3px var(--game_button_border_color);
+    border: solid 4px rgb(255, 255, 255);
     color: white;
     font-size: 5rem;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    transition: transform 0.1s;
+    /*
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    */
 }
 
-.button_1{
+.button_1 {
     grid-area: e1;
     background-color: var(--e_button);
 }
 
-.button_1__active{
+.button_1__active {
     background-color: var(--e_button__active);
+    transform: scale(var(--buton_active_scale));
+    border: solid 4px rgba(0, 0, 0, 0.5);
 }
 
-.button_2{
+.button_2 {
     grid-area: i1;
     background-color: var(--i_button);
 }
 
-.button_2__active{
+.button_2__active {
     background-color: var(--i_button__active);
+    transform: scale(var(--buton_active_scale));
+    border: solid 4px rgba(0, 0, 0, 0.5);
 }
 
-.button_3{
+.button_3 {
     grid-area: f1;
     background-color: var(--f_button);
 }
 
-.button_3__active{
+.button_3__active {
     background-color: var(--f_button__active);
+    transform: scale(var(--buton_active_scale));
+    border: solid 4px rgba(0, 0, 0, 0.5);
 }
 
-.button_4{
+.button_4 {
     grid-area: j1;
     background-color: var(--j_button);
 }
 
-.button_4__active{
+.button_4__active {
     grid-area: j1;
-    background-color: var(--j_button__active) !important;
+    background-color: var(--j_button__active);
+    transform: scale(var(--buton_active_scale));
+    border: solid 4px rgba(0, 0, 0, 0.5);
 }
-
-
