@@ -39,11 +39,6 @@ body {
     height: 100vh;
     background-color: #ffffff;
     background-image: linear-gradient(160deg, #ffffff 0%, #eaeaea 100%);
-
-
-    /*
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    */
 }
 
 main {
@@ -54,17 +49,6 @@ main {
     align-items: center;
     flex-direction: column;
 }
-
-.title {
-    margin-bottom: 50px;
-    font-size: var(--title_font_size);
-    background-color: #ec8a83;
-    background-image: linear-gradient(90deg, #ec8a83 0%, #8be59d 33%, #6ab4f1 66%, #f9f176 100%);
-    color: white;
-    padding: 5px 45px;
-    border-radius: 15px;
-}
-
 
 footer {
     width: 100%;
@@ -81,6 +65,21 @@ footer a {
     color: #6AB4F1;
 }
 
+.title {
+    margin-bottom: 50px;
+    font-size: var(--title_font_size);
+    background-color: #ec8a83;
+    background-image: linear-gradient(90deg, #ec8a83 0%, #8be59d 33%, #6ab4f1 66%, #f9f176 100%);
+    color: white;
+    padding: 5px 45px;
+    border-radius: 15px;
+}
+
+.level{
+    font-size: 4.6rem;
+    color: var(--game_button_border_color);
+}
+
 .console {
     width: 650px;
     height: 300px;
@@ -93,10 +92,6 @@ footer a {
     grid-template-areas:
         "e1 mm mm i1"
         "v1 f1 j1 v2";
-
-    /*
-    border-radius: 40px;
-    */
 }
 
 .start_input {
@@ -115,10 +110,6 @@ footer a {
     background-color: #c3c3c3;
 }
 
-.start_input:focus {
-    outline: none;
-}
-
 .game_input {
     width: var(--button_size);
     height: var(--button_size);
@@ -128,9 +119,6 @@ footer a {
     font-size: 5rem;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     transition: transform 0.1s;
-    /*
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    */
 }
 
 .button_1 {
