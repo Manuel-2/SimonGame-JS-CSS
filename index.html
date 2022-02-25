@@ -15,17 +15,17 @@
 <body>
     <main>
         <h1 class="title">Simon Game!</h1>
+        <p class="level">0</p>
         <div class="console">
-
-            <input type="button" value="E" class="game_input button_1">
-            <input type="button" value="I" class="game_input button_2">
+            <input type="button" value="E" data-number="1" class="game_input button_1" onclick="match.checkInput(1)">
+            <input type="button" value="I" data-number="2" class="game_input button_2" onclick="match.checkInput(2)">
 
             <button id="start_game_input" onclick="startGame()" class="start_input">
                 <p>Start</p>
             </button>
 
-            <input type="button" value="F" class="game_input button_3">
-            <input type="button" value="J" class="game_input button_4">
+            <input type="button" value="F" data-number="3" class="game_input button_3" onclick="match.checkInput(3)">
+            <input type="button" value="J" data-number="4" class="game_input button_4" onclick="match.checkInput(4)">
 
         </div>
     </main>
