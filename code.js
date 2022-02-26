@@ -21,6 +21,9 @@ class SimonGame {
             this.resetMatch();
         }
 
+        this.currentLevel = 0;
+        this.updateScore();
+
         this.inGame = true;
         this.expandSequence();
 
@@ -54,8 +57,6 @@ class SimonGame {
         this.sequence = [];
         this.currentInput = [];
         this.currentInputIndex = 0;
-        this.currentLevel = 0;
-        this.updateScore();
     }
 
     expandSequence() {
@@ -148,7 +149,3 @@ const match = new SimonGame();
 function startGame() {
     match.startNewGame();
 }
-
-
-
-
