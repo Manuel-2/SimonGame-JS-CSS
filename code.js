@@ -60,14 +60,12 @@ class SimonGame {
     }
 
     expandSequence() {
-        console.log("nuevo nivel");
         let newPosition = Math.floor(Math.random() * 4) + 1
         this.sequence.push(newPosition);
         this.reproduceSequence();
     }
 
     reproduceSequence() {
-        //TODO: add feedback
         const title = document.querySelector(".title");
         title.innerText = "playing sequence";
         this.sequence.forEach((buttonNumber, index) => {
@@ -86,9 +84,6 @@ class SimonGame {
 
         this.currentInput.push(BN);
         this.turnOnButton(BN);
-
-        console.log("secuencia:" + this.sequence);
-        console.log("inputs: " + this.currentInput);
         if (this.sequence[this.currentInputIndex] == this.currentInput[this.currentInputIndex]) {
             this.currentInputIndex++;
 
@@ -110,7 +105,6 @@ class SimonGame {
     }
 
     GameOver() {
-        console.log("GameOver");
         const title = document.querySelector(".title");
         title.innerText = "GameOver :(";
         this.resetMatch();
