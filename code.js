@@ -13,13 +13,14 @@ class SimonGame {
         this.currentLevel = 0;
         this.currentInput = [];
         this.currentInputIndex = 0;
-        this.time2Display = 500;
+        this.time2Display = 300;
     }
 
     startNewGame() {
         if (this.inGame) {
             this.resetMatch();
         }
+
         this.inGame = true;
         this.expandSequence();
 
@@ -66,6 +67,8 @@ class SimonGame {
 
     reproduceSequence() {
         //TODO: add feedback
+        const title = document.querySelector(".title");
+        title.innerText = "playing sequence";
         this.sequence.forEach((buttonNumber, index) => {
             setTimeout(() => {
                 this.turnOnButton(buttonNumber, index + 1);
@@ -83,11 +86,14 @@ class SimonGame {
         this.currentInput.push(BN);
         this.turnOnButton(BN);
 
+        console.log("secuencia:" + this.sequence);
+        console.log("inputs: " + this.currentInput);
         if (this.sequence[this.currentInputIndex] == this.currentInput[this.currentInputIndex]) {
             this.currentInputIndex++;
 
             if (this.sequence.length == this.currentInputIndex) {
-                console.log("nivel completado XD");
+                const title = document.querySelector(".title");
+                title.innerText = "Level Complete!";
                 this.currentLevel++;
                 this.updateScore();
                 this.currentInput = [];
@@ -106,6 +112,8 @@ class SimonGame {
     GameOver() {
         //TODO: add some feedback to the user
         console.log("GameOver");
+        const title = document.querySelector(".title");
+        title.innerText = "GameOver :(";
         this.resetMatch();
     }
 
@@ -118,8 +126,11 @@ class SimonGame {
 
         setTimeout(() => {
             if (position != null || position != undefined)
-                if (position == this.sequence.length)
+                if (position == this.sequence.length) {
                     this.listening = true;
+                    const title = document.querySelector(".title");
+                    title.innerText = "Listening...";
+                }
         }, this.time2Display);
     }
 
