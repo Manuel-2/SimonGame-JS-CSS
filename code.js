@@ -100,9 +100,8 @@ class SimonGame {
                 this.currentInputIndex = 0;
                 this.listening = false;
                 setTimeout(() => {
-                    //TODO: add some feedback that the player have do it correctly
                     this.expandSequence();
-                }, 3000);
+                }, 1000);
             }
         } else {
             this.GameOver();
@@ -110,7 +109,6 @@ class SimonGame {
     }
 
     GameOver() {
-        //TODO: add some feedback to the user
         console.log("GameOver");
         const title = document.querySelector(".title");
         title.innerText = "GameOver :(";
