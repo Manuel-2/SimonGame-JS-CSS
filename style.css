@@ -165,3 +165,26 @@ footer a {
     transform: scale(var(--buton_active_scale));
     border: solid 4px rgba(0, 0, 0, 0.5);
 }
+
+@media only screen and (max-width: 660px){
+
+    .title{
+        font-size: 4rem;
+    }
+
+	.console{
+        min-width: 320px;
+        min-height: 320px;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .game_input{
+        min-width: 75px;
+        min-height: 75px;
+        width: 80%;
+        height: 80%;
+    }
+}
